@@ -1,0 +1,76 @@
+{% extends "::base.html.twig"%}
+{% block body %}
+
+
+    <section class="container_12">
+    <div class="grid_12 top"><p>Le bureau d'architechture <span class="evid">Crearchitech</span>  allie création et techniques.
+            <br />Construction, rénovation et design d'intérieur.</p>
+
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="images/slider/sli1.jpg" data-thumb="images/slider/sli1.jpg" alt="slider-1" data-transition="fade"  />
+                <a href="http://dev7studios.com"><img src="images/slider/sli2.jpg" data-thumb="images/slider/sli2.jpg" alt="slider-2"  data-transition="fade"/></a>
+                <img src="images/slider/sli3.jpg" data-thumb="images/slider/sli3.jpg" alt="slider-3" data-transition="fade" />
+                <img src="images/slider/sli4.jpg" data-thumb="images/slider/sli4.jpg" alt="slider-4" title="#htmlcaption" data-transition="fade" />
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="container_12 middle">
+        <div class="alpha"> </div>
+        <div class="grid_4 tabl_col"><span class="num">1</span><h1> Construction</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus ac sapien nec pellentesque. Nulla facilisi. Praesent ut urna a massa ultricies sagittis. Pellentesque feugiat justo in dapibus hendrerit.</p></div>
+        <div class="grid_4 tabl_col"><span class="num">2</span><h1>Renovation</h1>
+            <p>Donec posuere nibh ligula, et iaculis odio lacinia sit amet. Mauris quis magna felis.</p></div>
+        <div class="grid_4 tabl_col"><span class="num">3</span><h1>intérieur</h1>
+            <p>Curabitur auctor hendrerit nisi in dictum. Curabitur turpis sem, vestibulum ut auctor et, aliquam eget lorem. Nam blandit quam eget sapien ornare, sit amet egestas orci ullamcorper.</p></div>
+        <div class="omega"></div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="container_12 bottom">
+        <h1>Travaux Récents </h1> 
+
+        <div class="grid_4 tabl_col " > 
+            {% image 'images/big-our-8.jpg' %}
+            <a class="example-image-link" href="{{asset_url}}" data-lightbox="images-index" data-title="pre-maho"><img src="{{asset_url}}" alt="Pré Maho"  /></a>
+            {%endimage%}
+            
+            <h2>Pré Maho</h2>
+            <p>Mars 2014
+                <br />Projet Lafabrique du Pré-Maho</p>
+        </div>
+
+        <div class="grid_4 tabl_col"> 
+            <a class="example-image-link" href="{{asset('images/big-our-2.jpg')}}" data-lightbox="images-index" data-title="pre-maho"><img src="{{asset('images/big-our-2.jpg')}}" alt="Pré Maho"  /></a>
+            <h2>Design Intérieur</h2>
+            <p>Février  2014
+                <br />Refonte de la cuisine</p>
+        </div>
+
+        <div class="grid_4 tabl_col"> 
+            <a class="example-image-link" href="{{asset('images/big-our-4.jpg')}}" data-lightbox="images-index" data-title="pre-maho"><img src="{{asset('images/big-our-4.jpg')}}" alt="Architecture Design"  /></a>
+
+            <h2>Architecture Design</h2>
+
+            <p>Janvier 2014
+                <br />Home Design, la rénovation intelligente. </p>
+        </div>
+    </div>
+
+</section>
+
+
+
+{% endblock %}
+
+
+
+
+

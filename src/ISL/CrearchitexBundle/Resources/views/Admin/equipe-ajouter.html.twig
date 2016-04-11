@@ -1,0 +1,17 @@
+{% extends "::base.html.twig"%}
+{% block body %}
+    <form action="{{path('crearchitex_equipe_modifier')}}" method='POST' >
+   
+    {{form_widget(form)}}
+   
+    <input type="submit" value="envoi" />
+    </form>
+
+
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,57 @@
+{% block header %}
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8" />
+            <title>{% block title %}Crearchitex - ADMIN!{% endblock %}</title>
+
+            {% stylesheets 
+                'css/admin/reset.css' 
+                'css/admin/style.css' 
+                'css/admin/invalid.css' 
+                'css/admin/ie.css' 
+                 filter='cssrewrite'    %}    
+                 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+            {% endstylesheets %}
+            
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        </head>
+    {% endblock %}
+
+    <body>
+        <div id="body-wrapper">
+            <div id="sidebar">
+                <div id="sidebar-wrapper">
+                    <h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
+                    <a href="#"><img id="logo" src="{{asset('images/admin/logo.png')}}" alt="Simpla Admin logo" /></a>
+                    <div id="profile-links">
+                        <a href="?" title="Voir la partie publique du site" target="_blank">Voir le site</a> | <a href="?p=admin_unlog" title="Déconnexion">Déconnexion</a>
+                    </div>   
+                    {% include 'ISLCrearchitexBundle:Admin/Partials/menu.html.twig'%}
+                </div>
+            </div>
+
+            <div id="main-content">
+
+                <div class="clear"></div>
+
+               {% block contenu %}
+               contenu
+               {% endblock %}
+                <div id="footer">
+                    <small>
+                        | <a href="#">Top</a>
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+
+
+{% block javascripts %}{% endblock %}
+{% block footer %}
+
+
+{% endblock %}

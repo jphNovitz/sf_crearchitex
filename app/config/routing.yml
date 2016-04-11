@@ -1,0 +1,7 @@
+isl_crearchitex:
+    resource: "@ISLCrearchitexBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
