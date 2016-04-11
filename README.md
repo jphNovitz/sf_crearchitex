@@ -20,7 +20,7 @@ J'ai  suivi les étapes suivantes:
 
 Entité equipe
 
-  * Création d'une entité équipe et d'une entité image => lien 
+  * Création des entite equipe, fonction et image => liens oneToOne et oneToMAny
 
   * installation de faker en tant que service pour créer des fixtures et mettre quelque chose dans mes entités et afficher quelque chose.
 

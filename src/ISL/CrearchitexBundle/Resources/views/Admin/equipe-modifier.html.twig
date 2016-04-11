@@ -1,69 +1,81 @@
 {% extends "ISLCrearchitexBundle:Admin:base-admin.html.twig"%}
+
 {% block body %}
     {% block contenu %}
-      <!--  <form action="{{path('crearchitex_equipe_ajouter')}}" method='POST' >
+        
+        <div class="content-box-content">
+            <div class="tab-content" id="tab2">
+                <form action="{{path('crearchitex_equipe_modifier', {'id': id})}}" method='POST' >
+                    <fieldset class='column-left'>
+                        <p>
+                            <label>Nom <span class="needed_field">*</span></label> 
+                            {{form_widget(form.nom)}}                        </p>
+                    </fieldset>
+                    <fieldset class='column-right'>
+                        <p>
+                            <label>Prénom <span class="needed_field">*</span></label> 
+                            {{form_widget(form.prenom)}}                                    </p>
+                    </fieldset>
 
-            {#{{form_widget(form.nom)}}#}
-           
-            <input type="submit" value="envoi" />
-            
-             
+                    <div class="clear"></div>
 
-        </form>-->
-            
-            <div class="content-box-content">
-    <div class="tab-content" id="tab2">
-        <form action="{{path('crearchitex_equipe_ajouter')}}" method='POST' >
-            <fieldset class='column-left'>
-                <p>
-                    <label>Nom <span class="needed_field">*</span></label> 
-                      {{form_widget(form.nom)}}                        </p>
-            </fieldset>
-            <fieldset class='column-right'>
-                <p>
-                    <label>Prénom <span class="needed_field">*</span></label> 
-                    {{form_widget(form.prenom)}}                                    </p>
-            </fieldset>
+                    <fieldset class='column-full'>
+                        <p>
+                            <label>Description <span class="needed_field">*</span></label> 
+                            {{form_widget(form.description)}}                                     </p>
 
-            <div class="clear"></div>
+                    </fieldset>
 
-            <fieldset class='column-full'>
-                <p>
-                    <label>Description <span class="needed_field">*</span></label> 
-                    {{form_widget(form.description)}}                                     </p>
+                    <fieldset class='column-full'>
+                        <p>
+                            <label>Métier <span class="needed_field">*</span></label> 
+                            {{form_widget(form.fonctions)}}                                             </p>
 
-            </fieldset>
+                    </fieldset>
+                    <fieldset class='column-full'>
+                        <p>
+                            <label>Visible: <span class=""></span></label> 
+                            {{form_widget(form.isVisible)}}                                             </p>
 
-            <fieldset class='column-full'>
-                <p>
-                    <label>Métier <span class="needed_field">*</span></label> 
-                    {{form_widget(form.fonctions)}}                                             </p>
+                    </fieldset>
 
-            </fieldset>
+                    <fieldset class='column-left'>
+                        <p>
+                            <label>Url: <span class="needed_field"></span></label> 
+                            {{form_widget(form.image.url)}}                          </p>
 
-            <div class="clear"></div>
+                    </fieldset>
+                    <fieldset class='column-right'>
+                        <p>
+                            <label>Alt: <span class="needed_field"></span></label> 
+                            {{form_widget(form.image.alt)}}                                             </p>
 
-            <fieldset class='column-full'>  
-
-                <p>
-                    <input class="button" type="submit" name="submit" value="Valider" />
-                </p>
-
-            </fieldset>
-
-
-            <div class="clear"></div>
-
-        </form>
-
-    </div>        
-
-</div>
-
-</div>
+                    </fieldset>
 
 
-    {% endblock %}
+                    <div class="clear"></div>
+
+                    <fieldset class='column-full'>  
+
+                        <p>
+                            <input class="button" type="submit" name="submit" value="Valider" />
+                        </p>
+
+                    </fieldset> 
+                    {{form_end(form)}}
+
+                    <div class="clear"></div>
+
+                </form>
+
+            </div>        
+
+        </div>
+
+    </div>
+
+
+{% endblock %}
 
 
 {% endblock %}

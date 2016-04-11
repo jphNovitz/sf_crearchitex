@@ -46,7 +46,7 @@ class AdminController extends Controller {
             $em = $this->getDoctrine()->getManager();
             $em->persist($e);
             $em->flush();
-            return $this->redirectToRoute('crearchitex_equipe');
+            return $this->redirectToRoute('crearchitex_admin_equipe_liste');
         } else {
 
             return $this->render('ISLCrearchitexBundle:Admin:equipe-ajouter.html.twig', array('form' => $form->createView()));
@@ -78,13 +78,14 @@ class AdminController extends Controller {
         $form = $this->createForm(EquipeType::class, $e);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($e);
             $em->flush();
-            return $this->redirectToRoute('crearchitex_equipe');
+            return $this->redirectToRoute('crearchitex_admin_equipe_liste');
         } else {
 
-            return $this->render('ISLCrearchitexBundle:Admin:equipe-modifier.html.twig', array('form' => $form->createView()));
+            return $this->render('ISLCrearchitexBundle:Admin:equipe-modifier.html.twig', array('form' => $form->createView(),'id'=>$id));
         }
         
     }
