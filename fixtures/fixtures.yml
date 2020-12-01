@@ -1,0 +1,5 @@
+App\Entity\Member:
+  member1:
+    firstName: blabla
+    lastName: toto
+    description: 1111

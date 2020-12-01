@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * 
+ *
  * @ORM\Entity(repositoryClass=MemberRepository::class)
  * @Vich\Uploadable
  */
@@ -25,7 +25,7 @@ class Member
      * @ORM\Column(type="integer")
      */
     private $id;
-/**
+    /**
      * @var string
      *
      * @ORM\Column(name="last_name", type="string", length=100)
@@ -46,13 +46,13 @@ class Member
      */
     private $description;
 
-   /**
-     * @ORM\Column(type="string", length=255)
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $image;
 
-     /**
+    /**
      * @ORM\Column(type="datetime")
      * @var \DateTime
      */
@@ -68,10 +68,10 @@ class Member
      * @ORM\ManyToMany(targetEntity="Role", cascade={"persist"})
      */
     private $role;
-    
+
     /**
      * @var isVisible
-     * 
+     *
      * @ORM\Column(name="isVisible", type="boolean", nullable=false, options={"default":true})
      */
     private $isVisible;
@@ -79,6 +79,8 @@ class Member
     public function __construct()
     {
         $this->role = new ArrayCollection();
+        $this->updatedAt = new \DateTime('now');
+        $this->isVisible = true ;
     }
 
 
