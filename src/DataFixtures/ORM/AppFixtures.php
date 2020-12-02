@@ -1,22 +1,33 @@
 <?php
-namespace App\DataFixtures\ORM;
+
 namespace App\DataFixtures\ORM;
 
-use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\PersistentObject;
+
+use App\Entity\Member;
 use Nelmio\Alice\Loader\NativeLoader;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
 
-class LoadFixtures extends Fixture
+class AppFixtures extends Fixture
 {
-    public function load(PersistentObject $object)
+    public function load(ObjectManager $manager)
     {
+        return array(
+            __DIR__ . '/fixtures.yml',
+        );
+    }
+
+
+    /*public function load(ObjectManager $manager)
+    {
+
         $loader = new NativeLoader();
-        $objectSet = $loader->loadFile(__DIR__ . '/fixtures.yaml')->getObjects();
-        foreach($objectSet as $object)
-        {
+        //$loader = new Nelmio\Alice\Loader\NativeLoader();
+        $objects = $loader->loadFile(__DIR__ . '/fixtures.yml');
+        foreach ($objects as $object) {
             $manager->persist($object);
         }
 
         $manager->flush();
-    }
+    }*/
 }
