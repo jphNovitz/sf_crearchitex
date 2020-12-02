@@ -38,6 +38,10 @@ class Role
      */
     private $isVisible;
 
+    public function __construct(){
+        $this->isVisible = true;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

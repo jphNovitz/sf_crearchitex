@@ -67,7 +67,7 @@ class Member
     /**
      * @ORM\ManyToMany(targetEntity="Role", cascade={"persist"})
      */
-    private $role;
+    private $roles;
 
     /**
      * @var isVisible
@@ -78,7 +78,7 @@ class Member
 
     public function __construct()
     {
-        $this->role = new ArrayCollection();
+        $this->roles = new ArrayCollection();
         $this->updatedAt = new \DateTime('now');
         $this->isVisible = true ;
     }
@@ -165,18 +165,30 @@ class Member
         return $this->image;
     }
 
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Role[]
      */
-    public function getRole(): Collection
+    public function getRoles(): Collection
     {
-        return $this->role;
+        return $this->roles;
     }
 
     public function addRole(Role $role): self
     {
-        if (!$this->role->contains($role)) {
-            $this->role[] = $role;
+        if (!$this->roles->contains($role)) {
+            $this->roles[] = $role;
         }
 
         return $this;
@@ -184,8 +196,10 @@ class Member
 
     public function removeRole(Role $role): self
     {
-        $this->role->removeElement($role);
+        $this->roles->removeElement($role);
 
         return $this;
     }
+
+    
 }
