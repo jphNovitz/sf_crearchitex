@@ -1,0 +1,101 @@
+{% block header %}
+    <!DOCTYPE html>
+<html lang="fr_be">
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Crearchitex On Symfony 3!{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/960.css') }}" type="text/css"  />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css"  />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+{% endblock %}
+
+<body>
+<header class="largeur">
+    <div class="container_12">
+        <div class="logo">
+            {#  # image '@ISLCrearchitexBundle/Resources/images/logo.png' %}
+                <img src="{{ asset_url }}" alt="Logo Crearchitex" />
+            {% endimage #}
+        </div>
+        <nav>
+            <ul>
+{#                <li><a href="{{path('crearchitex_homepage')}}">home</a> </li>#}
+{#                <li><a href="{{path('crearchitex_equipe')}}">equipe</a></li>#}
+{#                <li><a href="{{path('crearchitex_projet')}}">projets</a></li>#}
+{#                <li><a href="{{path('crearchitex_news')}}">news</a></li>#}
+{#                <li><a href="{{path('crearchitex_contact')}}">contact</a></li>#}
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </div>
+</header>
+{% block body %}{% endblock %}
+
+
+{% block footer %}
+<div class="air">
+    &nbsp;
+</div>
+<footer class="largeur">
+    <div class="container_12">
+
+        <div class="grid_3 alpha mrge_tabl">
+            <img src="images/logo.png" alt="logo crearchitex">
+            <p>Rejoingnez-nous ... </p>
+
+            <p> <a href="#"><img class="lien" src="{{asset('images/facebook.png')}}" alt="facebook"></a>
+                <a href="#"><img class="lien" src="{{asset('images/twitter.png')}}" alt="twitter"></a>
+                <a href="#"><img class="lien" src="{{asset('images/vimeo.png')}}" alt="vimeo"></a>
+                <a href="#"><img class="lien" src="{{asset('images/linked.png')}}" alt="linked"></a>
+                <a href="#"><img class="lien" src="{{asset('images/flickr.png')}}" alt="flickr"></a>
+
+            </p>
+        </div>
+
+        <div class="grid_3 alpha mrge_tabl"><h3>Contact</h3>
+            <p ><img src="images/address.png" alt="adresse" /> Adresse: Rue Saint Laurent 33
+                <br > <span class="ln"> 4000 Liege</span>
+            <p><img src="images/phone.png" alt="tel" /> Tel : +32(0)4 223 11 31</p>
+            <p><img src="images/mail_contact.png" alt="adresse" /> Email: info@architex.com </p>
+        </div>
+
+        <div class="grid_3 alpha twt">
+            <h3>Derniers Tweets</h3>
+            <a class="twitter-timeline"  href="https://twitter.com/demojiffy"  data-widget-id="478507264043528193">Tweets de @demojiffy</a>
+            <script>!function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location)?'http':'https'; if (!d.getElementById(id)){js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); }}(document, "script", "twitter-wjs");</script>
+
+
+        </div>
+
+        <div class="grid_3 alpha mrge_tabl"><h3>Dernières News</h3>
+            <ul>
+                <li>Laureat</li>
+                <li>Maison passive</li>
+                <li>Nouveau Collaborateur</li>
+                <li>Inauguration</li>
+                <li>Interview</li>
+                <li>Europa Nostra</li>
+            </ul>
+        </div>
+    </div>
+    <div class="copybg">
+        <div class="container_12 ">
+            <div class="copyr">
+                &copy; Copyright 2014 <span class="evid"> Architex</span>. All right reserved - plan du site
+            </div>
+        </div>
+    </div>
+
+</footer>
+{#  javascripts
+    'js/jquery-1.9.0.min.js'
+    'js/jquery.hoveraccordion.js'
+    'js/jquery.hoveraccordion.min.js'
+#}
+    <script src=""></script>
+</body>
+</html>
+
+
+{% endblock %}
