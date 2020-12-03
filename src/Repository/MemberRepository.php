@@ -31,6 +31,19 @@ class MemberRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    /**
+     * @return Member Returns a Member object
+     */
+    public function findMember($id){
+        return $this->createQueryBuilder('m')
+            ->leftJoin('m.roles', 'roles')
+            ->addSelect('m, roles')
+            ->andWhere('id == :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Member[] Returns an array of Member objects
     //  */

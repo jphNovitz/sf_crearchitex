@@ -30,7 +30,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/equipe", name="equipe")
+     * @Route("/equipe", name="members_list")
      */
     public function Members()
     {
@@ -38,6 +38,17 @@ class DefaultController extends AbstractController
         $members = $repo->findAllMembers();
 
         return $this->render('Default/Members/members.html.twig', ['members' => $members]);
+    }
+
+    /**
+     * @Route("/profile/{id}", name="membere_profile")
+     */
+    public function Member($id = null)
+    {
+        $repo = $this->entityManager->getRepository('App:Member');
+        $members = $repo->findMember($id);
+
+        return $this->render('Default/Members/member.html.twig', ['member' => $member]);
     }
 
 
