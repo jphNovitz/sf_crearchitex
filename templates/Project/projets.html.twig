@@ -1,4 +1,4 @@
-{% extends "::base.html.twig"%}
+{% extends 'Default/base.html.twig'%}
 {% block body %}
 
     <div class="subtitle">
@@ -10,7 +10,19 @@
 
     <section class="container_12 projet">
 
-
+        {% for project in projects %}
+            <div class="grid_3 vignette "> <a href=#zoom_1>
+                    <img src="images/big-our-2.jpg" alt="{{ project.title }} crearchitex" />
+                    <div class="cache">
+                        <h2>{{ project.title }}</h2>
+                        <p>
+                            {{ project.description }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+{#
         <div class="grid_3 vignette alpha"> <a href=#zoom_1>
                 <img src="images/big-our-1.jpg" alt="ProjetArchi projet" />
                 <div class="cache">
@@ -90,7 +102,9 @@
                     </p>
                 </div>
             </a>
-        </div>  
+        </div>  #}
+
+    </section>
     {% endblock %}
 
 
