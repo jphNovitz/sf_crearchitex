@@ -1,7 +1,25 @@
-{% extends "::base.html.twig"%}
+{% extends 'Default/base.html.twig' %}
+
 {% block body %}
-    news
-    {% endblock %}
+    <section class="container_12 news">
+
+        {% for item in news %}
+            <div class="grid_12">
+                <h2>
+                    <a href=#"">
+                        {{ item.title }}
+                    </a>
+                </h2>
+                <div class="">
+                    <p>
+                        {{ item.content }}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+
+    </section>
+{% endblock %}
     
 
 
