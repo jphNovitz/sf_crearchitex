@@ -29,34 +29,7 @@ class DefaultController extends AbstractController
         return $this->render('Default/index.html.twig');
     }
 
-    /**
-     * @Route("/equipe", name="members_list")
-     */
-    public function Members()
-    {
-        $repo = $this->entityManager->getRepository('App:Member');
-        $members = $repo->findAllMembers();
 
-        return $this->render('Default/Members/members.html.twig', ['members' => $members]);
-    }
-
-    /**
-     * @Route("/profile/{id}", name="membere_profile")
-     */
-    public function Member($id = null)
-    {
-        $repo = $this->entityManager->getRepository('App:Member');
-        $members = $repo->findMember($id);
-
-        return $this->render('Default/Members/member.html.twig', ['member' => $member]);
-    }
-
-
-
-
-    public function projetAction() {
-        return $this->render('ISLCrearchitexBundle:Default:projet.html.twig');
-    }
 
     public function newsAction() {
         return $this->render('ISLCrearchitexBundle:Default:news.html.twig');
