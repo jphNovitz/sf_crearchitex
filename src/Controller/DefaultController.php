@@ -21,12 +21,14 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/", name="default")
+     * @Route("/", name="front_index")
      */
     public function index()
     {
+        $projects = $this->entityManager->getRepository('App:Project')->findAllProjects(3);
 
-        return $this->render('Default/index.html.twig');
+
+        return $this->render('Default/index.html.twig', ['projects'=>$projects]);
     }
 
 

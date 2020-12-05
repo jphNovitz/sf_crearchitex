@@ -22,10 +22,13 @@ class ProjectRepository extends ServiceEntityRepository
     /**
      * @return Project[] Returns an array of Project objects
      */
-    public function findAllProjects(){
+    public function findAllProjects($limit = null)
+    {
         return $this->createQueryBuilder('p')
             ->leftJoin('p.category', 'category')
             ->addSelect('p, category')
+            ->addOrderBy('p.id', 'DESC')
+            ->setMaxResults($limit)
             ->getQuery()
             ->getResult();
     }
@@ -33,7 +36,8 @@ class ProjectRepository extends ServiceEntityRepository
     /**
      * @return Project Returns a Project object
      */
-    public function findProject($id){
+    public function findProject($id)
+    {
         return $this->createQueryBuilder('p')
             ->leftJoin('p.category', 'category')
             ->addSelect('p, category')
@@ -42,6 +46,7 @@ class ProjectRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
 
     // /**
     //  * @return Project[] Returns an array of Project objects

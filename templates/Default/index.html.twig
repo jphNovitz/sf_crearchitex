@@ -35,33 +35,26 @@
     <div class="clearfix"></div>
 
     <div class="container_12 bottom">
-        <h1>Travaux Récents </h1> 
+        <h1>Travaux Récents </h1>
+        {% for project in projects %}
+        <div class="grid_4 tabl_col " >
 
-        <div class="grid_4 tabl_col " > 
-            <img src="images/big-our-8.jpg" />
-            <a class="example-image-link" href="" data-lightbox="images-index" data-title="pre-maho"><img src="" alt="Pré Maho"  /></a>
+            <a class="example-image-link" href=""
+               data-lightbox="images-index" data-title="{{ project.title }}">
+                {% if (project.image is defined) and (project.image is not null) %}
+                    <img src="images/big-our-8.jpg"
+                         alt="{{ project.title }}" />
+                {% else %}
+                    <img src="https://via.placeholder.com/300/008000/FFFFFF/?text=Crearchitex"
+                         alt="{{ project.title }}">
+                {% endif %}
+            </a>
 
-            
-            <h2>Pré Maho</h2>
-            <p>Mars 2014
-                <br />Projet Lafabrique du Pré-Maho</p>
+
+            <h2>{{ project.title }}</h2>
+            <p>{{ project.description }}</p>
         </div>
-
-        <div class="grid_4 tabl_col"> 
-            <a class="example-image-link" href="{{asset('images/big-our-2.jpg')}}" data-lightbox="images-index" data-title="pre-maho"><img src="{{asset('images/big-our-2.jpg')}}" alt="Pré Maho"  /></a>
-            <h2>Design Intérieur</h2>
-            <p>Février  2014
-                <br />Refonte de la cuisine</p>
-        </div>
-
-        <div class="grid_4 tabl_col"> 
-            <a class="example-image-link" href="{{asset('images/big-our-4.jpg')}}" data-lightbox="images-index" data-title="pre-maho"><img src="{{asset('images/big-our-4.jpg')}}" alt="Architecture Design"  /></a>
-
-            <h2>Architecture Design</h2>
-
-            <p>Janvier 2014
-                <br />Home Design, la rénovation intelligente. </p>
-        </div>
+        {% endfor %}
     </div>
 
 </section>

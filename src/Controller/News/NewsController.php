@@ -43,5 +43,10 @@ class NewsController extends AbstractController
         return $this->render('news/card.html.twig', ['news' => $news]);
     }
 
-
+    /*
+     * Rendered controllers in template
+     */
+    public function showNewsFront($limit = null){
+        return $this->render('News/last-x-news.html.twig', ['news_list'=>$this->repo->findLastNews($limit)]);
+    }
 }

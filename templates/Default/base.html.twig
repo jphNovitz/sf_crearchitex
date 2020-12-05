@@ -3,7 +3,7 @@
 <html lang="fr_be">
 <head>
     <meta charset="UTF-8"/>
-    <title>{% block title %}Crearchitex On Symfony 3!{% endblock %}</title>
+    <title>{% block title %}Crearchitex reloaded Symfony 5 !{% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('css/960.css') }}" type="text/css"/>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css"/>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
@@ -14,16 +14,14 @@
 <header class="largeur">
     <div class="container_12">
         <div class="logo">
-            {# # image '@ISLCrearchitexBundle/Resources/images/logo.png' %}
-                <img src="{{ asset_url }}" alt="Logo Crearchitex" />
-            {% endimage #}
+            <img src="{{ asset('images/logo.png') }}" alt="Logo Crearchitex"/>
         </div>
         <nav>
             <ul>
-                {# <li><a href="{{path('crearchitex_homepage')}}">home</a> </li> #}
-                {# <li><a href="{{path('crearchitex_equipe')}}">equipe</a></li> #}
-                {# <li><a href="{{path('crearchitex_projet')}}">projets</a></li> #}
-                {# <li><a href="{{path('crearchitex_news')}}">news</a></li> #}
+                <li><a href="{{ path('front_index') }}">home</a></li>
+                <li><a href="{{ path('members_list') }}">equipe</a></li>
+                <li><a href="{{ path('projects_list') }}">projets</a></li>
+                <li><a href="{{ path('news_list') }}">news</a></li>
                 {# <li><a href="{{path('crearchitex_contact')}}">contact</a></li> #}
             </ul>
         </nav>
@@ -31,7 +29,7 @@
     </div>
 </header>
 
-    {% block body %}{% endblock %}
+{% block body %}{% endblock %}
 
 {% block footer %}
 <div class="air">
@@ -44,11 +42,26 @@
             <img src="images/logo.png" alt="logo crearchitex">
             <p>Rejoingnez-nous ... </p>
 
-            <p><a href="#"><img class="lien" src="{{ asset('images/facebook.png') }}" alt="facebook"></a>
-                <a href="#"><img class="lien" src="{{ asset('images/twitter.png') }}" alt="twitter"></a>
-                <a href="#"><img class="lien" src="{{ asset('images/vimeo.png') }}" alt="vimeo"></a>
-                <a href="#"><img class="lien" src="{{ asset('images/linked.png') }}" alt="linked"></a>
-                <a href="#"><img class="lien" src="{{ asset('images/flickr.png') }}" alt="flickr"></a>
+            <p>
+                <a href="https://www.facebook.com/jphNovitz">
+                    <img class="lien" src="{{ asset('images/facebook.png') }}"
+                         alt="facebook">
+                </a>
+                <a href="https://twitter.com/jphNovitz">
+                    <img class="lien" src="{{ asset('images/twitter.png') }}"
+                         alt="twitter">
+                </a>
+                <a href="https://www.linkedin.com/in/jphnovitz/">
+                    <img class="lien"
+                         src="{{ asset('images/linked.png') }}"
+                         alt="linkedin">
+                </a>
+                <a href="https://www.youtube.com/watch?v=zTpnDT5_YKY">
+                    <img class="lien" src="{{ asset('images/youtube.png') }}"
+                         alt="youtube"
+                         style="width: 30px">
+                </a>
+{#                <img class="lien" src="{{ asset('images/flickr.png') }}" alt="flickr">#}
 
             </p>
         </div>
@@ -77,15 +90,11 @@
 
         </div>
 
-        <div class="grid_3 alpha mrge_tabl"><h3>Dernières News</h3>
-            <ul>
-                <li>Laureat</li>
-                <li>Maison passive</li>
-                <li>Nouveau Collaborateur</li>
-                <li>Inauguration</li>
-                <li>Interview</li>
-                <li>Europa Nostra</li>
-            </ul>
+
+        <div class="grid_3 alpha mrge_tabl">
+            {{ render(controller(
+                'App\\Controller\\News\\NewsController::showNewsFront', {limit: 3}
+            )) }}
         </div>
     </div>
     <div class="copybg">

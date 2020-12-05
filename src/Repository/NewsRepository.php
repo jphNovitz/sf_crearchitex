@@ -42,32 +42,17 @@ class NewsRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    // /**
-    //  * @return News[] Returns an array of News objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
+    /**
+     * @return News[] Returns an array of x last News objects
+     * return only id and title
+     */
+    public function findLastNews($max = null){
         return $this->createQueryBuilder('n')
-            ->andWhere('n.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('n.id', 'ASC')
-            ->setMaxResults(10)
+            ->addSelect('n.id, n.title')
+            ->orderBy('n.id', 'DESC')
+            ->setMaxResults($max)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?News
-    {
-        return $this->createQueryBuilder('n')
-            ->andWhere('n.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
