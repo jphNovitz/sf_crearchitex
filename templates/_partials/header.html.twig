@@ -1,0 +1,35 @@
+<header class="">
+    <div class="container_12 mobile-menu">
+        <nav>
+            <ul>
+                <li><a href="{{ path('front_index') }}">home</a></li>
+                <li><a href="{{ path('members_list') }}">equipe</a></li>
+                <li><a href="{{ path('projects_list') }}">projets</a></li>
+                <li><a href="{{ path('news_list') }}">news</a></li>
+                {# <li><a href="{{path('crearchitex_contact')}}">contact</a></li> #}
+            </ul>
+        </nav>
+        <div class="navigation">
+            <a href="#" class="trigger">
+                <span class="hamburger"> </span>
+            </a>
+        </div>
+    </div>
+    <div class="container_12 desktop-menu">
+
+        <nav>
+            <ul>
+                <li><a href="{{ path('front_index') }}">home</a></li>
+                <li><a href="{{ path('members_list') }}">equipe</a></li>
+                <li><a href="{{ path('projects_list') }}">projets</a></li>
+                <li><a href="{{ path('news_list') }}">news</a></li>
+                {# <li><a href="{{path('crearchitex_contact')}}">contact</a></li> #}
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </div>
+    <div class="logo">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo Crearchitex"/>
+    </div>
+
+</header>

@@ -1,0 +1,173 @@
+.container_12 {
+    max-width: 100%;
+}
+
+.desktop-menu{
+    display: none;
+}
+header {
+    background-color: #363636;
+}
+
+/* decide to use negative margin not transfom/translate transform: translateY(-10rem)
+    because translate does move the next element -> margin does */
+.container_12.mobile-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: -10rem;
+    transition: margin-top .800s ease;
+}
+.container_12.mobile-menu.active{
+    margin-top: 0;
+}
+header .container_12 .navigation{
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 1.5rem;
+    margin-top: 1rem;
+}
+
+header .logo {
+    position: absolute;
+    left: 2rem;
+    top: -10px;
+}
+
+header .logo img {
+    height: 5.5rem;
+
+}
+
+header nav {
+    background-color: #363636;
+    display: flex;
+    flex: 1;
+}
+
+
+
+header nav ul li {
+    padding: .5rem 1rem;
+    list-style-type: none;
+    text-transform: uppercase;
+    background-color: inherit;
+    color: #ffffff;
+
+}
+
+header nav li a {
+    text-decoration: none;
+    padding: 1rem 10px;
+    font-size: 1rem;
+    background-color: inherit;
+    color: #aaa;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+
+}
+
+/*.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}*/
+
+.hamburger {
+    border-top: solid 3px #94c127;
+    width: 25px;
+    display: block;
+    height: 0;
+    border-bottom: solid 3px #94c127;
+    margin-top: 0;
+    margin-right: 2rem;
+    margin-bottom: 0;
+    border-radius: 15px;
+}
+
+ .hamburger:before {
+    content: " ";
+    border-top: solid 3px #aaa;
+    width: 25px;
+    display: block;
+    height: 0;
+    border-bottom: solid 3px #aaa;
+    margin-top: -10px;
+    margin-bottom: 2px;
+    border-radius: 15px;
+}
+
+ .hamburger:after {
+    content: " ";
+    border-top: solid 3px #aaa;
+    width: 25px;
+    display: block;
+    height: 0;
+    border-bottom: solid 3px #aaa;
+    margin-top: 12px;
+    margin-bottom: 0;
+    border-radius: 15px;
+}
+
+@media (min-width: 640px) {
+
+}
+
+@media (min-width: 1024px) {
+    header .container_12.mobile-menu {
+        display: none;
+    }
+
+    header .container_12 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+
+    header nav {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    header nav ul li {
+        padding: .5rem 1rem;
+
+    }
+
+    header nav li a {
+        display: inline-block;
+        text-decoration: none;
+        margin: 0;
+        padding: 15px 10px;
+        font-size: 12px;
+        border-top: solid 2px #363636;
+        font-weight: bold;
+
+    }
+
+
+    header nav li a:hover {
+        background-color: #3f3f3f;
+        color: #fff;
+        border-top: solid 2px #81b600;
+
+    }
+
+
+    header .logo {
+        top: 0;
+    }
+}
