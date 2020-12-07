@@ -2,11 +2,13 @@
     max-width: 100%;
 }
 
+/* HEADER */
 .desktop-menu{
     display: none;
 }
 header {
     background-color: #363636;
+    position: relative;
 }
 
 /* decide to use negative margin not transfom/translate transform: translateY(-10rem)
@@ -15,7 +17,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: -10rem;
+    margin-top: -11rem;
     transition: margin-top .800s ease;
 }
 .container_12.mobile-menu.active{
@@ -33,7 +35,7 @@ header .container_12 .navigation{
 header .logo {
     position: absolute;
     left: 2rem;
-    top: -10px;
+    bottom: -1rem;
 }
 
 header .logo img {
@@ -68,12 +70,6 @@ header nav li a {
     font-weight: bold;
 
 }
-
-/*.mobile-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}*/
 
 .hamburger {
     border-top: solid 3px #94c127;
@@ -111,11 +107,54 @@ header nav li a {
     border-radius: 15px;
 }
 
+ /**/
+.top{
+    background-color: inherit;
+    color: #505050;
+    font-size: 22px;
+    letter-spacing: -.6px;
+    text-align: center;
+    padding: 0;
+    word-wrap: break-word;
+
+}
+.top .evid{
+    background-color: #81B600;
+    color: #fff;
+    padding: 3px;
+    border-radius: 8px;
+}
+
+/* SLIDER
+ */
+
+.slider-wrapper {
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.nivoSlider{
+    height: 10rem;
+}
+
 @media (min-width: 640px) {
+
+    /* SLIDER
+ */
+
+
+    .nivoSlider{
+        height: 15rem;
+    }
+
 
 }
 
 @media (min-width: 1024px) {
+
+
+    /* HEADER */
+
     header .container_12.mobile-menu {
         display: none;
     }
@@ -168,6 +207,17 @@ header nav li a {
 
 
     header .logo {
-        top: 0;
+        bottom: 0;
     }
+
+
+    /* SLIDER
+ */
+
+
+    .nivoSlider{
+        height: 25rem;
+    }
+
+
 }
