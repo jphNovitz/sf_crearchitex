@@ -2,6 +2,41 @@
     max-width: 100%;
 }
 
+.container.multiple-articles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container.multiple-articles .num{
+    position: relative;
+    top: 3.2rem;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #cecece;
+    color: #fff;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#num-1:hover .num,
+#num-2:hover .num,
+#num-3:hover .num{
+    background-color: #81b600;
+    color: #fff;
+}
+
+.multiple-articles h2{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+}
+.multiple-articles p{
+    margin-left: 2rem;
+    font-size: 1rem;
+}
+
 /* HEADER */
 .desktop-menu{
     display: none;
@@ -151,6 +186,13 @@ header nav li a {
 }
 
 @media (min-width: 1024px) {
+
+    .container.multiple-articles{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
 
 
     /* HEADER */
