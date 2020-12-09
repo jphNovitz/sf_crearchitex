@@ -1,0 +1,88 @@
+<footer class="largeur">
+    <div class="container">
+        <div class="row">
+            <div class="col-6-sm col-3 alpha mrge_tabl">
+                <img src="images/logo.png" alt="logo crearchitex">
+                <p>Rejoingnez-nous ... </p>
+
+                <p>
+                    <a href="https://www.facebook.com/jphNovitz" style="color: #363636;">
+                        <img class="lien" src="{{ asset('images/facebook.png') }}"
+                             alt="facebook">
+                    </a>
+                    <a href="https://twitter.com/jphNovitz" style="color: #363636;">
+                        <img class="lien" src="{{ asset('images/twitter.png') }}"
+                             alt="twitter">
+                    </a>
+                    <a href="https://www.linkedin.com/in/jphnovitz/" style="color: #363636;">
+                        <img class="lien"
+                             src="{{ asset('images/linked.png') }}"
+                             alt="linkedin">
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=zTpnDT5_YKY" style="color: #363636;">
+                        <img class="lien" src="{{ asset('images/youtube.png') }}"
+                             alt="youtube"
+                             style="width: 30px">
+                    </a>
+                    {# <img class="lien" src="{{ asset('images/flickr.png') }}" alt="flickr"> #}
+
+                </p>
+            </div>
+
+            <div class="col-6-sm col-3 alpha mrge_tabl"><h3>Contact</h3>
+                <p><img src="images/address.png" alt="adresse"/> Adresse: Rue Saint Laurent 33
+                    <br> <span class="ln"> 4000 Liege</span>
+                <p><img src="images/phone.png" alt="tel"/> Tel : +32(0)4 223 11 31</p>
+                <p><img src="images/mail_contact.png" alt="adresse"/> Email: info@architex.com </p>
+            </div>
+
+            <div class="col-6-sm col-3 alpha twt">
+                <h3>Derniers Tweets</h3>
+                <a class="twitter-timeline" href="https://twitter.com/demojiffy" data-widget-id="478507264043528193">Tweets
+                    de @demojiffy</a>
+                <script>!function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + "://platform.twitter.com/widgets.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, "script", "twitter-wjs");</script>
+
+
+            </div>
+
+
+            <div class="col-6-sm col-3 alpha mrge_tabl">
+                {{ render(controller(
+                    'App\\Controller\\News\\NewsController::showNewsFront', {limit: 3}
+                )) }}
+            </div>
+        </div>
+        </div>
+        <div class="copybg">
+            <div class="container_12 ">
+                <div class="copyr">
+                    &copy; Copyright 2014 <span class="evid"> Architex</span>. All right reserved - plan du site
+                </div>
+            </div>
+        </div>
+
+</footer>
+
+<div class="air">
+    &nbsp;
+</div>
+<script src="{{ asset('js/jquery-1.9.0.min.js') }}"></script>
+<script src="{{ asset('js/jquery.hoveraccordion.js') }}"></script>
+<script src="{{ asset('js/jquery.hoveraccordion.min.js') }}"></script>
+<script src="{{ asset('js/jquery.nivo.slider.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+<script type="text/javascript">
+    $(window).load(function () {
+        $('#slider').nivoSlider();
+    });
+</script>
+</body>
+</html>

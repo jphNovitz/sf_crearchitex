@@ -17,57 +17,59 @@
 
     <section class="container multiple-articles">
         <div class="alpha"></div>
+        <div class="row">
+            <article class="col-12-sm col-4 tabl_col"
+                     id="num-1">
+                <span class="num">1</span>
+                <h2>Construction</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus ac sapien nec pellentesque.
+                    Nulla facilisi. Praesent ut urna a massa ultricies sagittis. Pellentesque feugiat justo in dapibus
+                    hendrerit.
+                </p>
+            </article>
 
-        <article class="col-12-sm col-4 tabl_col"
-                 id="num-1">
-            <span class="num">1</span>
-            <h2>Construction</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus ac sapien nec pellentesque.
-                Nulla facilisi. Praesent ut urna a massa ultricies sagittis. Pellentesque feugiat justo in dapibus
-                hendrerit.
-            </p>
-        </article>
+            <article class="col-12-sm col-4 tabl_col"
+                     id="num-2">
+                <span class="num">2</span>
+                <h2>Renovation</h2>
+                <p>Donec posuere nibh ligula, et iaculis odio lacinia sit amet. Mauris quis magna felis.</p>
+            </article>
 
-        <article class="col-12-sm col-4 tabl_col"
-                 id="num-2">
-            <span class="num">2</span>
-            <h2>Renovation</h2>
-            <p>Donec posuere nibh ligula, et iaculis odio lacinia sit amet. Mauris quis magna felis.</p>
-        </article>
-
-        <div class="col-12-sm col-4 tabl_col"
-             id="num-3">
-            <span class="num">3</span>
-            <h2>intérieur</h2>
-            <p>Curabitur auctor hendrerit nisi in dictum. Curabitur turpis sem, vestibulum ut auctor et, aliquam
-                eget lorem. Nam blandit quam eget sapien ornare, sit amet egestas orci ullamcorper.</p></div>
-        <div class="omega"></div>
-
+            <article class="col-12-sm col-4 tabl_col"
+                     id="num-3">
+                <span class="num">3</span>
+                <h2>intérieur</h2>
+                <p>Curabitur auctor hendrerit nisi in dictum. Curabitur turpis sem, vestibulum ut auctor et, aliquam
+                    eget lorem. Nam blandit quam eget sapien ornare, sit amet egestas orci ullamcorper.</p></article>
+            <div class="omega"></div>
+        </div>
     </section>
 
     <div class="clearfix"></div>
 
-    <div class="container_12 bottom">
+    <div class="container bottom">
         <h1>Travaux Récents </h1>
-        {% for project in projects %}
-            <div class="grid_4 tabl_col ">
+        <div class="row">
+            {% for project in projects %}
+                <article class="col-12-sm col-4 tabl_col ">
 
-                <a class="example-image-link" href=""
-                   data-lightbox="images-index" data-title="{{ project.title }}">
-                    {% if (project.image is defined) and (project.image is not null) %}
-                        <img src="images/big-our-8.jpg"
-                             alt="{{ project.title }}"/>
-                    {% else %}
-                        <img src="https://via.placeholder.com/300/008000/FFFFFF/?text=Crearchitex"
-                             alt="{{ project.title }}">
-                    {% endif %}
-                </a>
+                    <a class="example-image-link" href=""
+                       data-lightbox="images-index" data-title="{{ project.title }}">
+                        {% if (project.image is defined) and (project.image is not null) %}
+                            <img src="images/big-our-8.jpg"
+                                 alt="{{ project.title }}"/>
+                        {% else %}
+                            <img src="https://via.placeholder.com/300/008000/FFFFFF/?text=Crearchitex"
+                                 alt="{{ project.title }}">
+                        {% endif %}
+                    </a>
 
 
-                <h2>{{ project.title }}</h2>
-                <p>{{ project.description }}</p>
-            </div>
-        {% endfor %}
+                    <h2>{{ project.title }}</h2>
+                    <p>{{ project.description }}</p>
+                </article>
+            {% endfor %}
+        </div>
     </div>
 
     </section>

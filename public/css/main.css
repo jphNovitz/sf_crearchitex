@@ -2,6 +2,14 @@
     max-width: 100%;
 }
 
+h2{
+    font-size: 1.3rem;
+}
+
+h3{
+    font-size: 1.1rem;
+}
+
 .container.multiple-articles{
     display: flex;
     flex-direction: column;
@@ -30,7 +38,7 @@
 
 .multiple-articles h2{
     margin-left: 2rem;
-    font-size: 1.5rem;
+    /*font-size: 1.5rem;*/
 }
 .multiple-articles p{
     margin-left: 2rem;
@@ -41,10 +49,29 @@
 .desktop-menu{
     display: none;
 }
-header {
+header, footer {
     background-color: #363636;
+    color: #aaa;
     position: relative;
 }
+
+header p,
+footer h1, footer h3, footer h3,
+footer p,
+footer ul li,
+footer a:link,
+footer a:visited,
+footer a:hover,
+footer a:active
+footer ul li a:link,
+footer ul li a:visited,
+footer ul li a:hover,
+footer ul li a:active
+{
+    color: #aaa;
+}
+
+
 
 /* decide to use negative margin not transfom/translate transform: translateY(-10rem)
     because translate does move the next element -> margin does */
@@ -170,6 +197,31 @@ header nav li a {
 
 .nivoSlider{
     height: 10rem;
+}
+
+.bottom p{
+    font-family: Tahoma;
+    font-size: 12px;
+    background-color: inherit;
+    color: #505050;
+
+}
+.bottom img{
+    border-radius: 8px;
+    width: 95%;
+    //height: 200px;
+    margin: 0 auto ;
+    transition: all .2s ease-in;
+    border: transparent 1px;
+
+}
+
+.bottom img:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+    z-index: 1;
+    overflow: auto;
+
 }
 
 @media (min-width: 640px) {
