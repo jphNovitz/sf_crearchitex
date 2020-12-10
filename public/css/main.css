@@ -1,5 +1,7 @@
 .container_12 {
-    max-width: 100%;
+    width: 75%;
+    max-width: 60rem;
+    margin: auto;
 }
 
 h2{
@@ -56,7 +58,7 @@ header, footer {
 }
 
 header p,
-footer h1, footer h3, footer h3,
+
 footer p,
 footer ul li,
 footer a:link,
@@ -68,7 +70,85 @@ footer ul li a:visited,
 footer ul li a:hover,
 footer ul li a:active
 {
-    color: #aaa;
+    color: #bbbbbb;
+}
+
+/* FOOTER */
+footer h1, footer h2, footer h3{
+    background-color: inherit;
+    color: #FFFFFF;
+}
+
+footer h3{
+    border-bottom: 1px solid rgba(187, 187, 187, .3);
+}
+
+
+footer p,
+footer ul li a{
+    font-size: .85rem;
+}
+
+footer p.footer_address:before{
+    content: url("../images/address.png");
+    vertical-align: middle;
+    padding-right: .2rem;
+}
+footer p.footer_address .br{
+    display: block;
+    padding-left: 4.4rem;
+    color: #bbbbbb;
+
+}
+
+footer p.footer_phone:before{
+    content: url("../images/phone.png");
+    vertical-align: middle;
+    padding-right: .2rem;
+}
+
+footer p.footer_mail:before{
+    content: url("../images/mail.png");
+    vertical-align: middle;
+}
+
+footer p.footer_mail a:link,
+footer p.footer_mail a:visited,
+footer p.footer_mail a:hover,
+footer p.footer_mail a:active {
+    background-color: inherit;
+    color: #94c127;
+}
+footer p.footer_address .title,
+footer p.footer_phone .title,
+footer p.footer_mail .title{
+    background-color: inherit;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+footer ul.footer_news {
+    padding-left: 0;
+}
+
+footer ul.footer_news li{
+    padding-left: .5rem;
+
+
+}
+
+footer ul.footer_news li a:link{
+    text-decoration: none;
+}
+
+footer ul.footer_news li::marker{
+    content: url("../images/list_star.png");
+}
+
+footer .footer_tweet{
+    max-height: 11rem;
+    overflow: scroll;
+
 }
 
 

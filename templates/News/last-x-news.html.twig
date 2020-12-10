@@ -1,7 +1,7 @@
 {# Render x last news to be rendered in a renderController method #}
 
 <h3>Dernières News</h3>
-<ul>
+<ul class="footer_news">
 {% for news in news_list %}
 <li><a href="/news/">{{ news.title }}</a> </li>
 {% endfor %}
