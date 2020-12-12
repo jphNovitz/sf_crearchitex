@@ -44,12 +44,10 @@
             </div>
 
             <div class="col-6-sm col-3 alpha twt">
-                <h3>Derniers Tweets</h3>
-                <div class="footer_tweet">
-                    <a class="twitter-timeline" data-lang="fr" data-theme="dark"
-                       href="https://twitter.com/jphNovitz?ref_src=twsrc%5Etfw">Tweets by jphNovitz</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
+                {{ render(controller(
+                    'App\\Controller\\Twitter\\TwitterController::getLatestTweets'
+                )) }}
+
 
             </div>
 

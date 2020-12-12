@@ -1,0 +1,17 @@
+<h3>Derniers Tweets</h3>
+
+
+<div class="footer_tweet">
+    <ul class="footer_news">
+        {% for tweet in tweets %}
+            <li>
+                {{ tweet.date }}
+                <br />
+                {{ tweet.text|nl2br }}
+
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
