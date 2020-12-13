@@ -1,14 +1,11 @@
 <h3>Derniers Tweets</h3>
 
-
 <div class="footer_tweet">
-    <ul class="footer_news">
+    <ul>
         {% for tweet in tweets %}
             <li>
-                {{ tweet.date }}
-                <br />
-                {{ tweet.text|nl2br }}
-
+                <a href="https://twitter.com/jphNovitz" target="_blank">@jphNovitz </a>, le <a href="{{ tweet.link }}" target="_blank"> {{ tweet.date }}</a>
+                <br />{{ tweet.text|nl2br }}
             </li>
         {% endfor %}
     </ul>

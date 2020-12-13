@@ -5,6 +5,9 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     app.path.member_images: /uploads/images/member
+    screen_name: '%env(SCREEN_NAME)%'
+    count: '%env(COUNT)%'
+    bearer: '%env(BEARER)%'
 
 services:
     # default configuration for services in *this* file
@@ -27,6 +30,10 @@ services:
     App\Controller\:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
+    App\Service\:
+        resource: '../src/Service/'
+        autowire: true
+        public: true
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

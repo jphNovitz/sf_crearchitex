@@ -115,10 +115,16 @@ footer p.footer_mail:before{
 footer p.footer_mail a:link,
 footer p.footer_mail a:visited,
 footer p.footer_mail a:hover,
-footer p.footer_mail a:active {
+footer p.footer_mail a:active,
+footer .footer_tweet ul li a:link,
+footer .footer_tweet ul li a:visited,
+footer .footer_tweet ul li a:hover,
+footer .footer_tweet ul li a:active
+{
     background-color: inherit;
     color: #94c127;
 }
+
 footer p.footer_address .title,
 footer p.footer_phone .title,
 footer p.footer_mail .title{
@@ -127,11 +133,16 @@ footer p.footer_mail .title{
     font-weight: bold;
 }
 
-footer ul.footer_news {
+footer ul.footer_news{
     padding-left: 0;
-}
 
-footer ul.footer_news li{
+}
+footer .footer_tweet ul{
+    padding-left: 15px;
+
+}
+footer ul.footer_news li,
+footer .footer_tweet ul li{
     padding-left: .5rem;
 
 
@@ -141,15 +152,17 @@ footer ul.footer_news li a:link{
     text-decoration: none;
 }
 
-footer ul.footer_news li::marker{
+footer ul.footer_news li::marker,
+footer .footer_tweet ul li::marker{
     content: url("../images/list_star.png");
 }
 
 footer .footer_tweet{
     max-height: 11rem;
-    overflow: scroll;
+    overflow-y: scroll;
 
 }
+
 
 
 
