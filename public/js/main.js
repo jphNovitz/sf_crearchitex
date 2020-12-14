@@ -1,6 +1,6 @@
 console.log('hello Crearchitex')
 
-let mobileNav = document.querySelector('header .container_12.mobile-menu')
+let mobileNav = document.querySelector('header nav')
 let triggerButton = document.querySelectorAll('.trigger')
 
 triggerButton.forEach(btn => {

@@ -4,21 +4,21 @@
     margin: auto;
 }
 
-h2{
+h2 {
     font-size: 1.3rem;
 }
 
-h3{
+h3 {
     font-size: 1.1rem;
 }
 
-.container.multiple-articles{
+.container.multiple-articles {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.container.multiple-articles .num{
+.container.multiple-articles .num {
     position: relative;
     top: 3.2rem;
     display: inline-block;
@@ -33,24 +33,26 @@ h3{
 
 #num-1:hover .num,
 #num-2:hover .num,
-#num-3:hover .num{
+#num-3:hover .num {
     background-color: #81b600;
     color: #fff;
 }
 
-.multiple-articles h2{
+.multiple-articles h2 {
     margin-left: 2rem;
     /*font-size: 1.5rem;*/
 }
-.multiple-articles p{
+
+.multiple-articles p {
     margin-left: 2rem;
     font-size: 1rem;
 }
 
 /* HEADER */
-.desktop-menu{
+.desktop-menu {
     display: none;
 }
+
 header, footer {
     background-color: #363636;
     color: #aaa;
@@ -58,7 +60,6 @@ header, footer {
 }
 
 header p,
-
 footer p,
 footer ul li,
 footer a:link,
@@ -68,46 +69,46 @@ footer a:active
 footer ul li a:link,
 footer ul li a:visited,
 footer ul li a:hover,
-footer ul li a:active
-{
+footer ul li a:active {
     color: #bbbbbb;
 }
 
 /* FOOTER */
-footer h1, footer h2, footer h3{
+footer h1, footer h2, footer h3 {
     background-color: inherit;
     color: #FFFFFF;
 }
 
-footer h3{
+footer h3 {
     border-bottom: 1px solid rgba(187, 187, 187, .3);
 }
 
 
 footer p,
-footer ul li a{
+footer ul li a {
     font-size: .85rem;
 }
 
-footer p.footer_address:before{
+footer p.footer_address:before {
     content: url("../images/address.png");
     vertical-align: middle;
     padding-right: .2rem;
 }
-footer p.footer_address .br{
+
+footer p.footer_address .br {
     display: block;
     padding-left: 4.4rem;
     color: #bbbbbb;
 
 }
 
-footer p.footer_phone:before{
+footer p.footer_phone:before {
     content: url("../images/phone.png");
     vertical-align: middle;
     padding-right: .2rem;
 }
 
-footer p.footer_mail:before{
+footer p.footer_mail:before {
     content: url("../images/mail.png");
     vertical-align: middle;
 }
@@ -120,76 +121,92 @@ footer .footer_tweet ul li a:link,
 footer .footer_tweet ul li a:visited,
 footer .footer_tweet ul li a:hover,
 footer .footer_tweet ul li a:active
+footer .copyr a:link,
+footer .copyr a:visited,
+footer .copyr a:hover,
+footer .copyr a:active
 {
     background-color: inherit;
     color: #94c127;
+    text-decoration: none;
+}
+
+.evid{
+padding: 0 1rem;
 }
 
 footer p.footer_address .title,
 footer p.footer_phone .title,
-footer p.footer_mail .title{
+footer p.footer_mail .title {
     background-color: inherit;
     color: #FFFFFF;
     font-weight: bold;
 }
 
-footer ul.footer_news{
+footer ul.footer_news {
     padding-left: 0;
 
 }
-footer .footer_tweet ul{
+
+footer .footer_tweet ul {
     padding-left: 15px;
 
 }
+
 footer ul.footer_news li,
-footer .footer_tweet ul li{
+footer .footer_tweet ul li {
     padding-left: .5rem;
 
 
 }
 
-footer ul.footer_news li a:link{
+footer ul.footer_news li a:link {
     text-decoration: none;
 }
 
 footer ul.footer_news li::marker,
-footer .footer_tweet ul li::marker{
+footer .footer_tweet ul li::marker {
     content: url("../images/list_star.png");
 }
 
-footer .footer_tweet{
+footer .footer_tweet {
     max-height: 11rem;
     overflow-y: scroll;
 
 }
 
+footer .copyr {
+    background-color: inherit;
+    color: #bbbbbb;
+    margin-top: 3rem;
+    padding: 3rem 1rem 1rem 1rem;
+    font-size: .75rem;
+}
 
 
-
-/* decide to use negative margin not transfom/translate transform: translateY(-10rem)
-    because translate does move the next element -> margin does */
-.container_12.mobile-menu{
+/*
+.container.mobile-menu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: -11rem;
     transition: margin-top .800s ease;
-}
-.container_12.mobile-menu.active{
-    margin-top: 0;
-}
-header .container_12 .navigation{
+}*/
+
+
+
+header .container .navigation {
     height: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
     padding-right: 1.5rem;
     margin-top: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
 }
 
 header .logo {
     position: absolute;
-    left: 2rem;
+    /*left: 2rem;*/
     bottom: -1rem;
 }
 
@@ -198,13 +215,20 @@ header .logo img {
 
 }
 
-header nav {
+/* decide to use negative margin not transfom/translate transform: translateY(-10rem)
+    because translate does move the next element -> margin does */
+header  nav {
     background-color: #363636;
     display: flex;
     flex: 1;
+    padding-bottom: 5rem;
+    margin-top: -12rem;
+    transition: margin-top .800s ease;
 }
 
-
+header  nav.active {
+    margin-top: 0;
+}
 
 header nav ul li {
     padding: .5rem 1rem;
@@ -238,7 +262,7 @@ header nav li a {
     border-radius: 15px;
 }
 
- .hamburger:before {
+.hamburger:before {
     content: " ";
     border-top: solid 3px #aaa;
     width: 25px;
@@ -250,7 +274,7 @@ header nav li a {
     border-radius: 15px;
 }
 
- .hamburger:after {
+.hamburger:after {
     content: " ";
     border-top: solid 3px #aaa;
     width: 25px;
@@ -262,8 +286,8 @@ header nav li a {
     border-radius: 15px;
 }
 
- /**/
-.top{
+/**/
+.top {
     background-color: inherit;
     color: #505050;
     font-size: 22px;
@@ -273,7 +297,8 @@ header nav li a {
     word-wrap: break-word;
 
 }
-.top .evid{
+
+.top .evid {
     background-color: #81B600;
     color: #fff;
     padding: 3px;
@@ -288,30 +313,31 @@ header nav li a {
     margin: 1rem auto;
 }
 
-.nivoSlider{
+.nivoSlider {
     height: 10rem;
 }
 
-.bottom p{
+.bottom p {
     font-family: Tahoma;
     font-size: 12px;
     background-color: inherit;
     color: #505050;
 
 }
-.bottom img{
+
+.bottom img {
     border-radius: 8px;
     width: 95%;
-    //height: 200px;
-    margin: 0 auto ;
+/ / height: 200 px;
+    margin: 0 auto;
     transition: all .2s ease-in;
     border: transparent 1px;
 
 }
 
-.bottom img:hover{
+.bottom img:hover {
     transform: scale(1.1);
-    cursor:pointer;
+    cursor: pointer;
     z-index: 1;
     overflow: auto;
 
@@ -321,9 +347,7 @@ header nav li a {
 
     /* SLIDER
  */
-
-
-    .nivoSlider{
+    .nivoSlider {
         height: 15rem;
     }
 
@@ -332,26 +356,23 @@ header nav li a {
 
 @media (min-width: 1024px) {
 
-    .container.multiple-articles{
+    .container.multiple-articles {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-
 
 
     /* HEADER */
-
-    header .container_12.mobile-menu {
+    header .container .navigation {
         display: none;
     }
 
-    header .container_12 {
+    header .container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-
 
 
     header nav {
@@ -359,6 +380,9 @@ header nav li a {
         flex: 1;
         flex-direction: row;
         justify-content: flex-end;
+        margin-top: 0 !important;
+        padding-bottom: 0;
+
     }
 
     header nav ul {
@@ -400,9 +424,7 @@ header nav li a {
 
     /* SLIDER
  */
-
-
-    .nivoSlider{
+    .nivoSlider {
         height: 25rem;
     }
 
