@@ -34,7 +34,7 @@ class ProjectController extends AbstractController
     }
 
     /**
-     * @Route("/project/{id}", name="project_card")
+     * @Route("/projet/{id}", name="project_card")
      */
     public function Project($id = null)
     {

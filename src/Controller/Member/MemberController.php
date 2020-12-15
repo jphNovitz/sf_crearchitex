@@ -34,7 +34,7 @@ class MemberController extends AbstractController
     }
 
     /**
-     * @Route("/profile/{id}", name="membere_profile")
+     * @Route("/profile/{id}", name="member_profile")
      */
     public function Member($id = null)
     {
