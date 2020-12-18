@@ -4,8 +4,12 @@
     margin: auto;
 }
 
+h1 {
+    font-size: 1.925rem;
+}
+
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.125rem;
 }
 
 h3 {
@@ -343,6 +347,105 @@ header nav li a {
 
 }
 
+
+
+.thumbnail{
+    position: relative;
+    height: 220px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.thumbnail img{
+    width: 100%;
+
+}
+
+.thumbnail .cache{
+    width: 100%;
+    height: 220px;
+    background-color: #81B600;
+    color: #fff;
+    position: absolute;
+    /*top: 164px;*/
+    bottom: -6rem;
+    left:0;
+    opacity: .8;
+    transition: all .4s ease-in;
+
+}
+
+.thumbnail:hover  .cache{
+    position: absolute;
+    /*top: 0;*/
+    bottom: 0;
+    left:0;
+    opacity: .9;
+    cursor: pointer;
+
+}
+.thumbnail .cache h2{
+    margin:0;
+    font-size: 1.125rem;
+    font-family: Tahoma;
+    background-image: url(../images/portfolio_smaller.png);
+    background-repeat: no-repeat;
+    background-position:0 -5px;
+    color: #FFFFFF;
+    padding: 11px 5px 19px 60px;
+    max-width: 200px;
+    opacity: .7;
+    word-wrap: break-word;
+    text-transform: capitalize;
+
+
+}
+.thumbnail .cache p{
+    max-width: 200px;
+    word-wrap: break-word;
+    font-family: Tahoma;
+    font-size: .85rem;
+    color:#fff;
+    padding-left: 10px;
+}
+
+
+.zoom{
+    background-color: #000;
+    border: solid 1px transparent;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1.2s ease-in;
+    padding:25px;
+    text-align:center;
+
+
+
+}
+
+.zoom img{
+    width:600px;
+    display: block;
+    z-index: 10;
+    opacity: 1;
+    margin: 0 auto;
+
+
+}
+.zoom:target{
+    display: block;
+    opacity: .9;
+    z-index: 10;
+
+}
+
 @media (min-width: 640px) {
 
     /* SLIDER
@@ -356,6 +459,15 @@ header nav li a {
 
 @media (min-width: 1024px) {
 
+
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
     .container.multiple-articles {
         display: flex;
         flex-direction: row;
@@ -428,5 +540,15 @@ header nav li a {
         height: 25rem;
     }
 
+    .thumbnail .cache{
+        bottom: -9rem;
+    }
+    .thumbnail .cache h2{
+        font-size: 1.2rem;
+
+    }
+    .thumbnail .cache p{
+        font-size: 1.1rem;
+    }
 
 }

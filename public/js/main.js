@@ -24,3 +24,15 @@ numArticles.forEach(article => {
     }, i*8000)
     i++
 })
+
+/* manage thumbnail height*/
+let projectThumbs = document.querySelectorAll('.thumbnail');
+projectThumbs.forEach(thumb =>{
+    let image = thumb.querySelector('img');
+    let cache = thumb.querySelector('.cache');
+    image.style.height = image.clientWidth+'px'
+    thumb.style.height = image.clientWidth+'px'
+    cache.style.height = image.clientWidth+'px'
+})
+
+console.log(projectThumbs);

@@ -1,4 +1,4 @@
-{% extends 'Default/base.html.twig'%}
+{% extends 'Default/base.html.twig' %}
 {% block body %}
 
     <div class="subtitle">
@@ -8,21 +8,28 @@
         </div>
     </div>
 
-    <section class="container_12 projet">
+    <section class="container projet">
+        <div class="row">
+            {% for project in projects %}
+                <div class="col-6-sm col-3 thumbnail ">
+                    <a href=#zoom_1>
 
-        {% for project in projects %}
-            <div class="grid_3 vignette "> <a href=#zoom_1>
-                    <img src="images/big-our-2.jpg" alt="{{ project.title }} crearchitex" />
-                    <div class="cache">
-                        <h2>{{ project.title }}</h2>
-                        <p>
-                            {{ project.description }}
-                        </p>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
-{#
+                        {% if (project.images is defined) and (project.images is not empty) %}
+                            <img src="images/big-our-2.jpg" alt="{{ project.title }} crearchitex"/>
+                        {% else %}
+                            <img src="{{ asset('images/big-our-2.jpg') }}" alt="{{ project.title }} crearchitex"/>
+                        {% endif %}
+                        <div class="cache">
+                            <h2>{{ project.title }}</h2>
+                            <p>
+                                {{ project.description }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        {#
         <div class="grid_3 vignette alpha"> <a href=#zoom_1>
                 <img src="images/big-our-1.jpg" alt="ProjetArchi projet" />
                 <div class="cache">
@@ -102,10 +109,10 @@
                     </p>
                 </div>
             </a>
-        </div>  #}
+        </div> #}
 
     </section>
-    {% endblock %}
+{% endblock %}
 
 
 
