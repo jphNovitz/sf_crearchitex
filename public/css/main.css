@@ -416,13 +416,18 @@ header nav li a {
     background-color: #000;
     border: solid 1px transparent;
     position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     top: 0;
     left: 0;
     right: 0;
     bottom:0;
     z-index: -1;
     opacity: 0;
-    transition: opacity 1.2s ease-in;
+    transition: opacity 1200ms ease-in;
     padding:25px;
     text-align:center;
 
@@ -431,7 +436,7 @@ header nav li a {
 }
 
 .zoom img{
-    width:600px;
+    width:60%;
     display: block;
     z-index: 10;
     opacity: 1;
@@ -439,12 +444,60 @@ header nav li a {
 
 
 }
-.zoom:target{
-    display: block;
-    opacity: .9;
+.zoom.active{
+    opacity: .95;
     z-index: 10;
 
 }
+
+#zoom-close{
+    color: #fff;
+    font-weight: bolder;
+    font-size: 2rem;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+
+#zoom-close:link,
+#zoom-close:hover{
+    text-decoration: none;
+}
+
+.images .directionNav {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 5%;
+    justify-content: space-between;
+}
+.images .directionNav a {
+    display:block;
+    width:30px;
+    height:30px;
+    background:url(../images/arrows.png) no-repeat;
+    text-indent:-9999px;
+    border:0;
+    opacity: 0;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+.images:hover .directionNav a { opacity: 1; }
+.images a.nextNav {
+    background-position:-30px 0;
+    right:15px;
+}
+.images a.prevNav {
+    left:15px;
+}
+
+
 
 @media (min-width: 640px) {
 
@@ -550,5 +603,14 @@ header nav li a {
     .thumbnail .cache p{
         font-size: 1.1rem;
     }
+
+    #zoom-close{
+        color: #fff;
+        font-weight: bolder;
+        font-size: 2rem;
+        position: absolute;
+        right: 5rem;
+    }
+
 
 }

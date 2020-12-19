@@ -30,7 +30,7 @@ class ProjectController extends AbstractController
 
         $projects = $this->repo->findAllProjects();
 
-        return $this->render('Project/projets.html.twig', ['projects' => $projects]);
+        return $this->render('Project/projects-list.html.twig', ['projects' => $projects]);
     }
 
     /**
@@ -40,7 +40,7 @@ class ProjectController extends AbstractController
     {
         $project = $this->repo->findProject($id);
 
-        return $this->render('projets.html.twig', ['project' => $project]);
+        return $this->render('Project/project-card.html.twig', ['project' => $project]);
     }
 
 

@@ -1,0 +1,17 @@
+<div class="zoom">
+    <a href="#" id="zoom-close"> X </a>
+    {% if project.images is defined and project.images is not empty %}
+        <div class="images">
+            <div class="directionNav">
+                <a class="prevNav">Prev</a>
+                <a class="nextNav">Next</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="image">
+            <img src="{{ asset("images/big-our-2.jpg") }}"
+                 alt="{{ project.title }}"
+                 title="{{ project.title }}"/>
+        </div>
+    {% endif %}
+</div>

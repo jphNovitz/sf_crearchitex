@@ -41,10 +41,10 @@ class ProjectRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('p')
             ->leftJoin('p.category', 'category')
             ->addSelect('p, category')
-            ->andWhere('id == :id')
+            ->andWhere('p.id = :id')
             ->setParameter('id', $id)
             ->getQuery()
-            ->getResult();
+            ->getOneOrNullResult();
     }
 
 
