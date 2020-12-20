@@ -1,47 +1,66 @@
 {% extends "Default/base.html.twig" %}
+
 {% block body %}
 
     <div class="subtitle">
-
-        <div class="container_12">
-            <h1>Notre équipe</h1>
+        <div class="container">
+            <div class="row">
+                <h1>Notre équipe</h1>
+            </div>
         </div>
     </div>
 
-    <section class="container_12">
+    <section class="container">
 
-        <p>Le bureau est composé de 4 collaborateurs spécialisés dans le domaine de m'architecture ayant acquis une
-            connaissance approfondie, basée sur l'expérience et l'envie de perfectionnement. Cette équipe est composée
-            d'architectes, de dessinateurs, de graphistes et de techniciens expérimentés.</p>
+        <article>
+            <p>Le bureau est composé de 4 collaborateurs spécialisés dans le domaine de m'architecture ayant acquis une
+                connaissance approfondie, basée sur l'expérience et l'envie de perfectionnement. Cette équipe est
+                composée
+                d'architectes, de dessinateurs, de graphistes et de techniciens expérimentés.</p>
+        </article>
 
-
-        <div class="cite"><p>Les détails font la perfection, la perfection n'est pas un détail...</p>
-            <span class="push_cite_2"> <a href="#">De Vinci</a> Léonard</span>
+        <article class="cite">
+            <p>Les détails font la perfection, la perfection n'est pas un détail...</p>
+            <span class="push_cite_2">
+                <a href="https://fr.wikipedia.org/wiki/L%C3%A9onard_de_Vinci">De Vinci</a> Léonard
+            </span>
             <span class="push_cite_1"> &nbsp; </span>
-        </div>
+        </article>
         <span class="push_cite_1"> </span>
-
-        <div>
-            {% if members is defined %}
+    </section>
+    <section class="container team">
+        <div class="row">
+            {% if members is defined and members is not empty %}
                 {% for member in members %}
                     {% if member.isVisible == 1 %}
-                        <div class="grid_5 equipe">
-                        <img src="{{ member.image }}" alt="equipe"/>
-                        <p class="tit"><span class="memb">{{ member.lastName }} {{ member.firstName }}</span>
-                            <br/>
-                            {% for role in member.roles %}
-                                {{ role.name }}
-                            {% endfor %}
-                        </p>
-                        <p>{{ member.description }}</p>
+                        <article class="col-12-sm col-6 member">
+                        {% if member.image is defined and member.image is not empty %}
+                            <img src="{{ member.image }}"
+                                 alt="{{ member.lastName }} {{ member.firstName }} - crearchiteX staff"/>
+                        {% else %}
+                            <img src="{{ asset('images/img_team_03.jpg') }}"
+                                 alt="{{ member.lastName }} {{ member.firstName }} - crearchiteX staff"/>
+                        {% endif %}
+                        <div class="content">
+                            <h2>
+                                {{ member.lastName }} {{ member.firstName }}
+                            </h2>
+                                <ul>
+                                {% for role in member.roles %}
+                                    <li>{{ role.name }}</li>
+                                {% endfor %}
+                                </ul>
+                            <p>{{ member.description }}</p>
+
+                        </div>
                     {% endif %}
-                    </div>
+                    </article>
                 {% endfor %}
+            {% else %}
+                <p>Notre équipe est vide</p>
             {% endif %}
         </div>
-
     </section>
-
 
 
 {% endblock %}

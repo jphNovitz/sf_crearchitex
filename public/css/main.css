@@ -4,6 +4,20 @@
     margin: auto;
 }
 
+.subtitle {
+    background-color: #e7e7e7;
+    color: #363636;
+    margin: 0;
+    padding: 0;
+    border-bottom: solid 1px #d7d7d7;
+}
+
+.subtitle h1 {
+    font-size: 22px;
+    margin: 0;
+    padding: 15px 0 25px 0;
+}
+
 h1 {
     font-size: 1.925rem;
 }
@@ -117,6 +131,10 @@ footer p.footer_mail:before {
     vertical-align: middle;
 }
 
+section a:link,
+section a:visited,
+section a:hover,
+section a:active,
 footer p.footer_mail a:link,
 footer p.footer_mail a:visited,
 footer p.footer_mail a:hover,
@@ -128,15 +146,15 @@ footer .footer_tweet ul li a:active
 footer .copyr a:link,
 footer .copyr a:visited,
 footer .copyr a:hover,
-footer .copyr a:active
-{
+footer .copyr a:active {
     background-color: inherit;
     color: #94c127;
     text-decoration: none;
+    font-weight: bold;
 }
 
-.evid{
-padding: 0 1rem;
+.evid {
+    padding: 0 1rem;
 }
 
 footer p.footer_address .title,
@@ -188,17 +206,6 @@ footer .copyr {
 }
 
 
-/*
-.container.mobile-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: -11rem;
-    transition: margin-top .800s ease;
-}*/
-
-
-
 header .container .navigation {
     height: 2rem;
     padding-right: 1.5rem;
@@ -221,7 +228,7 @@ header .logo img {
 
 /* decide to use negative margin not transfom/translate transform: translateY(-10rem)
     because translate does move the next element -> margin does */
-header  nav {
+header nav {
     background-color: #363636;
     display: flex;
     flex: 1;
@@ -230,7 +237,7 @@ header  nav {
     transition: margin-top .800s ease;
 }
 
-header  nav.active {
+header nav.active {
     margin-top: 0;
 }
 
@@ -347,9 +354,114 @@ header nav li a {
 
 }
 
+/* Members page  */
 
 
-.thumbnail{
+.cite {
+    border: solid 1.5px #d7d7d7;
+    border-bottom: 0;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    width: 95%;
+}
+
+.push_cite_2 {
+    position: absolute;
+    background: #fff url(../images/testimonials_bg.png) no-repeat;
+    left: 4px;
+    bottom: -24.5px;
+    padding-left: 60px;
+    padding-top: 10px;
+    font-size: 12px;
+
+}
+
+.push_cite_1 {
+    position: absolute;
+    left: 64px;
+    bottom: -20px;
+    background: transparent url(../images/divider_bg.png) repeat-x;
+    display: inline-block;
+    width: 882px;
+}
+
+.team{
+    margin: 4rem auto;
+}
+
+.member {
+    font: 1rem Tahoma;
+    height: 9rem;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    background-color: #ddd;
+    border-radius: 8px;
+    /*box-shadow: 0px 100px 10px -5px red; */
+    box-shadow: 0 60px 80px 2px #fff, 0 12px 3px -8px #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.member img {
+    margin: 5px 10px 5px 3px;
+    width: 9rem;
+    height: 6.15rem;
+
+}
+
+.member .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.member h2,
+.member ul li{
+    text-shadow: 1px 1px 1.5px rgba(135,134,134,.8);
+}
+.member h2{
+    background-color: inherit;
+    color: #81B600;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.member ul{
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+}
+
+.member ul li:first-child:before{
+    content: "";
+}
+.member ul li:before{
+    content: "\00a0 ";
+}
+.member ul li{
+    list-style-type: none;
+    font-size: 1rem;
+}
+.member ul li:after {
+    content: ' -';
+}
+.member ul li:last-child:after {
+    content: '';
+}
+
+.member p{
+    font-size: .9rem;
+}
+
+
+/* Projects */
+
+.thumbnail {
     position: relative;
     height: 220px;
     margin-top: 15px;
@@ -358,12 +470,12 @@ header nav li a {
     padding: 0;
 }
 
-.thumbnail img{
+.thumbnail img {
     width: 100%;
 
 }
 
-.thumbnail .cache{
+.thumbnail .cache {
     width: 100%;
     height: 220px;
     background-color: #81B600;
@@ -371,28 +483,29 @@ header nav li a {
     position: absolute;
     /*top: 164px;*/
     bottom: -6rem;
-    left:0;
+    left: 0;
     opacity: .8;
     transition: all .4s ease-in;
 
 }
 
-.thumbnail:hover  .cache{
+.thumbnail:hover .cache {
     position: absolute;
     /*top: 0;*/
     bottom: 0;
-    left:0;
+    left: 0;
     opacity: .9;
     cursor: pointer;
 
 }
-.thumbnail .cache h2{
-    margin:0;
+
+.thumbnail .cache h2 {
+    margin: 0;
     font-size: 1.125rem;
     font-family: Tahoma;
     background-image: url(../images/portfolio_smaller.png);
     background-repeat: no-repeat;
-    background-position:0 -5px;
+    background-position: 0 -5px;
     color: #FFFFFF;
     padding: 11px 5px 19px 60px;
     max-width: 200px;
@@ -402,20 +515,21 @@ header nav li a {
 
 
 }
-.thumbnail .cache p{
+
+.thumbnail .cache p {
     max-width: 200px;
     word-wrap: break-word;
     font-family: Tahoma;
     font-size: .85rem;
-    color:#fff;
+    color: #fff;
     padding-left: 10px;
 }
 
 
-.zoom{
+.zoom {
     background-color: #000;
     border: solid 1px transparent;
-    position:absolute;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -424,19 +538,18 @@ header nav li a {
     top: 0;
     left: 0;
     right: 0;
-    bottom:0;
+    bottom: 0;
     z-index: -1;
     opacity: 0;
     transition: opacity 1200ms ease-in;
-    padding:25px;
-    text-align:center;
-
+    padding: 25px;
+    text-align: center;
 
 
 }
 
-.zoom img{
-    width:60%;
+.zoom img {
+    width: 60%;
     display: block;
     z-index: 10;
     opacity: 1;
@@ -444,13 +557,14 @@ header nav li a {
 
 
 }
-.zoom.active{
+
+.zoom.active {
     opacity: .95;
     z-index: 10;
 
 }
 
-#zoom-close{
+#zoom-close {
     color: #fff;
     font-weight: bolder;
     font-size: 2rem;
@@ -461,7 +575,7 @@ header nav li a {
 
 
 #zoom-close:link,
-#zoom-close:hover{
+#zoom-close:hover {
     text-decoration: none;
 }
 
@@ -475,28 +589,33 @@ header nav li a {
     left: 5%;
     justify-content: space-between;
 }
+
 .images .directionNav a {
-    display:block;
-    width:30px;
-    height:30px;
-    background:url(../images/arrows.png) no-repeat;
-    text-indent:-9999px;
-    border:0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/arrows.png) no-repeat;
+    text-indent: -9999px;
+    border: 0;
     opacity: 0;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
 }
-.images:hover .directionNav a { opacity: 1; }
-.images a.nextNav {
-    background-position:-30px 0;
-    right:15px;
-}
-.images a.prevNav {
-    left:15px;
+
+.images:hover .directionNav a {
+    opacity: 1;
 }
 
+.images a.nextNav {
+    background-position: -30px 0;
+    right: 15px;
+}
+
+.images a.prevNav {
+    left: 15px;
+}
 
 
 @media (min-width: 640px) {
@@ -513,7 +632,6 @@ header nav li a {
 @media (min-width: 1024px) {
 
 
-
     h1 {
         font-size: 2.5rem;
     }
@@ -521,6 +639,7 @@ header nav li a {
     h2 {
         font-size: 1.5rem;
     }
+
     .container.multiple-articles {
         display: flex;
         flex-direction: row;
@@ -593,18 +712,20 @@ header nav li a {
         height: 25rem;
     }
 
-    .thumbnail .cache{
+    .thumbnail .cache {
         bottom: -9rem;
     }
-    .thumbnail .cache h2{
+
+    .thumbnail .cache h2 {
         font-size: 1.2rem;
 
     }
-    .thumbnail .cache p{
+
+    .thumbnail .cache p {
         font-size: 1.1rem;
     }
 
-    #zoom-close{
+    #zoom-close {
         color: #fff;
         font-weight: bolder;
         font-size: 2rem;
