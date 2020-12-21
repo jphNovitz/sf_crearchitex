@@ -45,10 +45,10 @@ function listenZoom () {
 
     zooms.forEach(zoom => {
         zoom.addEventListener('click', () => {
-            console.log('ooooo')
+            let id = zoom.dataset.id
+            console.log(id)
             var request = new XMLHttpRequest();
-
-            request.open('GET', '/projet/' + 56, true)
+            request.open('GET', '/projet/' + id, true)
             request.onload = function () {
                 if (request.status >= 200 && request.status < 400) {
                     let body = document.querySelector('body')
