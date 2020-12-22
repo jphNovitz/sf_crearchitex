@@ -617,6 +617,16 @@ header nav li a {
     left: 15px;
 }
 
+/*  contact page*/
+#contact h2{
+    border-bottom: solid .8px #aaa;
+
+}
+
+#contact  #map{
+    width: 100%;
+    height: 40vh;
+}
 
 @media (min-width: 640px) {
 
