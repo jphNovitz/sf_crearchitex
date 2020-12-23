@@ -628,6 +628,57 @@ header nav li a {
     height: 40vh;
 }
 
+#contact form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+}
+
+#contact .form-row,
+#contact .form-text-area{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 5rem;
+    justify-content: space-around;
+}
+
+
+#contact .form-row{
+    height: 3rem;
+}
+#contact .form-text-area{
+    height: 9rem;
+}
+
+
+#contact form button{
+    width: 5rem;
+    margin-top: 2rem;
+}
+
+#contact form .required:after{
+    content: ' *';
+    color: red;
+}
+
+#contact .info-address, .info-email, .info-phone{
+
+    font-weight: bold;
+    font-size: 1rem;
+}
+#contact .info-address:before{
+    padding-right: .8rem;
+    content: url("../images/address_contact.png");
+}
+#contact .info-phone:before{
+    padding-right: .8rem;
+    content: url("../images/phone_contact.png");
+}
+#contact .info-email:before{
+    padding-right: .8rem;
+    content: url("../images/mail_contact.png");
+}
+
 @media (min-width: 640px) {
 
     /* SLIDER

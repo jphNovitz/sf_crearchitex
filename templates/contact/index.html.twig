@@ -8,7 +8,7 @@
             <h1>Nous joindre</h1>
         </div>
     </div>
-    <div class="container"  id="contact">
+    <div class="container" id="contact">
         <div class="row">
             <div class="col-12-sm">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2529.934279841172!2d5.516244815738532!3d50.646911679502914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e2!4m0!4m5!1s0x47c0fbc5cf643db9%3A0xcf83e826b8b2d9ba!2sChauss%C3%A9e%20Roosevelt%2C%204420%20Saint-Nicolas!3m2!1d50.6469117!2d5.5184334999999995!5e0!3m2!1sfr!2sbe!4v1608652374207!5m2!1sfr!2sbe"
@@ -25,16 +25,33 @@
         <div class="row">
             <div class="col-8-sm col-6">
                 <h2>Une question ?</h2>
+                {{ form_start(form) }}
 
-                
+                <div class="form-row">
+                    {{ form_label(form.name, "Nom") }}
+                    {{ form_widget(form.name) }}
+                </div>
+
+                <div class="form-row">
+                    {{ form_label(form.email, 'Email', {'label_attr': {'class': 'required'}}) }}
+                    {{ form_widget(form.email) }}
+                </div>
+
+                <div class="form-text-area">
+                    {{ form_label(form.message, "Message", {'label_attr': {'class': 'required'}}) }}
+                    {{ form_widget(form.message) }}
+                </div>
+                {{ form_widget(form.send, { 'label': 'Envoyer' }) }}
+                {{ form_end(form) }}
+
             </div>
             <div class="col-4-sm col-6">
-                    <h2>Nos Coordonnées</h2>
+                <h2>Nos Coordonnées</h2>
+                <p><span class="info-address">Adresse: </span>Rue Saint-Laurent 33 - 4000 Liège
+                    <br/> <span class="info-phone">Téléphone: </span>+32 (0)4 222 222 22
+                    <br/> <span class="info-email">Email: </span>hello@jphnovitz.be</p>
             </div>
         </div>
     </div>
-    contact
-
-
 
 {% endblock %}
