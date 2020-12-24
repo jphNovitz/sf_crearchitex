@@ -16,7 +16,7 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, \Swift_Mailer $mailer): Response
     {
 
         $form = $this->createFormBuilder()
@@ -37,6 +37,29 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // data is an array with "name", "email", and "message" keys
             $data = $form->getData();
+            $message = (new \Swift_Message('Hello Email'))
+                ->setFrom('send@example.com')
+                ->setTo('recipient@example.com')
+                ->setBody(
+                    $this->renderView(
+                        'email/contact-mail.html.twig',
+                        ['name' => '$name']
+                    ),
+                    'text/html'
+                );
+
+                // you can remove the following code if you don't define a text version for your emails
+                /*->addPart(
+                    $this->renderView(
+                    // templates/emails/registration.txt.twig
+                        'emails/registration.txt.twig',
+                        ['name' => $name]
+                    ),
+                    'text/plain'
+                )
+            ;*/
+
+            $mailer->send($message);
             dd($data);
         }
 
