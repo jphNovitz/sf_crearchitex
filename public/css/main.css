@@ -679,6 +679,22 @@ header nav li a {
     content: url("../images/mail_contact.png");
 }
 
+.alert.alert-success,
+.alert.alert-danger{
+    padding: 1rem;
+    border-radius: 15px;
+}
+.alert.alert-success{
+    background-color: #81B600;
+    border: solid 2px #262d12;
+    color: #262d12;
+}
+.alert.alert-danger{
+    background-color: #fccfcf;
+    border: solid 2px #8a0000;
+    color: #8a0000;
+}
+
 @media (min-width: 640px) {
 
     /* SLIDER
