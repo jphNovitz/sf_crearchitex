@@ -2,6 +2,7 @@
 
 namespace App\Controller\Contact;
 
+use App\Model\EmailSenderInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -16,10 +17,36 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request, \Swift_Mailer $mailer): Response
+    public function index(Request $request, EmailSenderInterface $emailSender): Response
     {
 
-        $form = $this->createFormBuilder()
+        $form = $this->makeForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // data is an array with "name", "email", and "message" keys
+            $data = $form->getData();
+            if ($emailSender->send($data['name'], $data['email'], $data['message'])) {
+                $this->addFlash('success', 'Message envoyé');
+                $form = $this->makeForm();
+            } else {
+                $this->addFlash('danger', 'Il y a eu une erreur');
+                return $this->render('contact/index.html.twig', [
+                    'form' => $form->createView(),
+                ]);
+            }
+        }
+
+
+        return $this->render('contact/index.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    protected function makeForm()
+    {
+        return $this->createFormBuilder()
             ->add('name', TextType::class, [
                 'required' => false,
             ])
@@ -31,41 +58,5 @@ class ContactController extends AbstractController
             ])
             ->add('send', SubmitType::class)
             ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            // data is an array with "name", "email", and "message" keys
-            $data = $form->getData();
-            $message = (new \Swift_Message('Hello Email'))
-                ->setFrom('send@example.com')
-                ->setTo('recipient@example.com')
-                ->setBody(
-                    $this->renderView(
-                        'email/contact-mail.html.twig',
-                        ['name' => '$name']
-                    ),
-                    'text/html'
-                );
-
-                // you can remove the following code if you don't define a text version for your emails
-                /*->addPart(
-                    $this->renderView(
-                    // templates/emails/registration.txt.twig
-                        'emails/registration.txt.twig',
-                        ['name' => $name]
-                    ),
-                    'text/plain'
-                )
-            ;*/
-
-            $mailer->send($message);
-            dd($data);
-        }
-
-
-        return $this->render('contact/index.html.twig', [
-            'form' => $form->createView(),
-        ]);
     }
 }

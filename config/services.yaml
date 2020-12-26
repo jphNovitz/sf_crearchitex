@@ -8,6 +8,7 @@ parameters:
     screen_name: '%env(SCREEN_NAME)%'
     count: '%env(COUNT)%'
     bearer: '%env(BEARER)%'
+    email_to: '%env(CONTACT_TO_EMAIL)%'
 
 services:
     # default configuration for services in *this* file
