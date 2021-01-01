@@ -79,6 +79,7 @@ header, footer {
 
 header p,
 footer p,
+footer .footer_content,
 footer ul li,
 footer a:link,
 footer a:visited,
@@ -115,7 +116,7 @@ footer p.footer_address:before {
 
 footer p.footer_address .br {
     display: block;
-    padding-left: 4.4rem;
+    /*padding-left: 4.4rem;*/
     color: #bbbbbb;
 
 }
@@ -129,6 +130,17 @@ footer p.footer_phone:before {
 footer p.footer_mail:before {
     content: url("../images/mail.png");
     vertical-align: middle;
+}
+
+footer .social-links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .footer_content{
+    display: inline-flex;
+    flex-direction: column;
 }
 
 section a:link,
@@ -330,7 +342,7 @@ header nav li a {
 
 .bottom p {
     font-family: Tahoma;
-    font-size: 12px;
+    font-size: 1rem;
     background-color: inherit;
     color: #505050;
 
@@ -339,7 +351,7 @@ header nav li a {
 .bottom img {
     border-radius: 8px;
     width: 95%;
-/ / height: 200 px;
+/* height: 200 px;*/
     margin: 0 auto;
     transition: all .2s ease-in;
     border: transparent 1px;
@@ -361,7 +373,7 @@ header nav li a {
     border: solid 1.5px #d7d7d7;
     border-bottom: 0;
     border-radius: 10px;
-    padding: 1rem;
+    padding: .55rem;
     margin-bottom: 1.5rem;
     position: relative;
     width: 95%;
@@ -393,7 +405,7 @@ header nav li a {
 
 .member {
     font: 1rem Tahoma;
-    height: 9rem;
+    height: auto;
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
     background-color: #ddd;
@@ -433,6 +445,8 @@ header nav li a {
 
 .member ul{
     display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
 }
@@ -445,7 +459,7 @@ header nav li a {
 }
 .member ul li{
     list-style-type: none;
-    font-size: 1rem;
+    font-size: .85rem;
 }
 .member ul li:after {
     content: ' -';
@@ -809,6 +823,33 @@ header nav li a {
         position: absolute;
         right: 5rem;
     }
+
+    /* MEMBERS*/
+
+    .cite {
+        padding: 1rem;
+    }
+
+    .member {
+        font: 1rem Tahoma;
+        height: 9.3rem;
+    }
+    .member ul li{
+        font-size: 1rem;
+    }
+
+ /* FOOTER */
+    footer .footer_content{
+        display: inline;
+    }
+
+    footer p.footer_address .br {
+        padding-left: 4.4rem;
+    }
+
+    footer .social-links{
+        flex-direction: row;
+        }
 
 
 }
