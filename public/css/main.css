@@ -134,8 +134,20 @@ footer p.footer_mail:before {
 
 footer .social-links{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+
+footer ul.social-links li{
+    list-style-type: none;
+}
+
+footer ul.social-links li img{
+    width: 2rem
+
 }
 
 footer .footer_content{
@@ -847,9 +859,10 @@ header nav li a {
         padding-left: 4.4rem;
     }
 
-    footer .social-links{
-        flex-direction: row;
-        }
+    footer ul.social-links li img{
+        width: 3rem;
+
+    }
 
 
 }
