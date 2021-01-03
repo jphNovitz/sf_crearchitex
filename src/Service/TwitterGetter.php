@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Model\TwitterGetterInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 
@@ -33,16 +34,18 @@ class TwitterGetter implements TwitterGetterInterface {
 
     public function getDatas()
     {
-        return $this->client->request(
-            'GET',
-            'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' . $this->screenName . '&count=' . $this->count,
-            ['headers' => [
-                'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . $this->bearer
-            ]]
-        )->getContent();
-
-        return $response;
+        try {
+            return $this->client->request(
+                'GET',
+                'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' . $this->screenName . '&count=' . $this->count,
+                ['headers' => [
+                    'Content-Type' => 'application/json',
+                    'Authorization' => 'Bearer ' . $this->bearer
+                ]]
+            )->getContent();
+        } catch (TransportExceptionInterface $exception){
+            return false;
+        }
     }
 
 

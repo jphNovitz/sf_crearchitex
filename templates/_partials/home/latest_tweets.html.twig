@@ -1,6 +1,7 @@
 <h3>Derniers Tweets</h3>
 
 <div class="footer_tweet">
+    {% if tweets is not null %}
     <ul>
         {% for tweet in tweets %}
             <li>
@@ -9,6 +10,9 @@
             </li>
         {% endfor %}
     </ul>
+    {% else %}
+    <p>Probleme de réseau, aucun tweet à afficher</p>
+    {% endif %}
 </div>
 
 

@@ -15,10 +15,12 @@ use App\Model\TwitterPresenterInterface;
  * @package App\Service
  * @implement App\Model\TwitterPresenterInterface
  */
-class TwitterPresenter implements TwitterPresenterInterface {
+class TwitterPresenter implements TwitterPresenterInterface
+{
 
     public function prepareDatas($content)
     {
+        if (!$content) return null;
 
         $tweets = [];
         $raw_tweets = json_decode($content);
