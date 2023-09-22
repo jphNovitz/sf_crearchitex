@@ -61,10 +61,10 @@
             </div>
 
             <div class="col-6-sm col-3 alpha twt">
-                {{ render(controller(
+              {#  {{ render(controller(
                     'App\\Controller\\Twitter\\TwitterController::getLatestTweets'
-                )) }}
-
+                )) }}#}
+                {% include '_partials/home/latest_tweets.html.twig' with {'tweets': null} %}
 
             </div>
 
